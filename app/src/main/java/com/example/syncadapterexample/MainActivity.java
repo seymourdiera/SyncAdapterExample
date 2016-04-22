@@ -20,7 +20,7 @@ import com.example.syncadapterexample.entity.Person_Table;
 import com.raizlabs.android.dbflow.sql.language.ConditionGroup;
 import com.raizlabs.android.dbflow.structure.provider.ContentUtils;
 
-public class MainActivity extends Activity{
+public class MainActivity extends Activity {
 
 
     // CONSTANTES
@@ -67,13 +67,12 @@ public class MainActivity extends Activity{
         });
 
 
-
     }
 
     private void queryList() {
         Cursor elementsCursor = ContentUtils.query(getContentResolver(), MyDatabase.Person.CONTENT_URI, ConditionGroup.clause().and(Person_Table.name.isNotNull()), null, new String[]{"_id", "name"});
 
-        CursorAdapter cursorAdapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1, elementsCursor, new String[]{"name"},new int[]{android.R.id.text1});
+        CursorAdapter cursorAdapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1, elementsCursor, new String[]{"name"}, new int[]{android.R.id.text1});
 
         listView.setAdapter(cursorAdapter);
     }

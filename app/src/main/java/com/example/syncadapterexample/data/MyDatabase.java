@@ -27,6 +27,7 @@ public class MyDatabase {
 
     /**
      * Builds an URI from the paths array specified as params
+     *
      * @param paths
      * @return
      */
