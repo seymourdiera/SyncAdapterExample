@@ -3,7 +3,7 @@
     android:contentAuthority="com.example.syncadapterexample.provider"
     android:accountType="example.com"
     android:userVisible="true"
-    android:supportsUploading="false"
+    android:supportsUploading="true"
     android:allowParallelSyncs="false"
     android:isAlwaysSyncable="true"
     />

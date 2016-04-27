@@ -31,6 +31,13 @@ public class MainActivity extends Activity {
     // nombre cualquiera para la cuent
     public static final String ACCOUNT = "dummyaccount";
 
+    // Sync interval constants
+    public static final long SECONDS_PER_MINUTE = 60L;
+    public static final long SYNC_INTERVAL_IN_MINUTES = 1L;
+    public static final long SYNC_INTERVAL =
+            SYNC_INTERVAL_IN_MINUTES *
+                    SECONDS_PER_MINUTE;
+
     // CAMPOS DE INSTANCIA
     // Para almacenar la cuenta recuperada
     Account mAccount;
@@ -65,6 +72,8 @@ public class MainActivity extends Activity {
                 queryList();
             }
         });
+
+        getContentResolver().addPeriodicSync(mAccount, AUTHORITY, Bundle.EMPTY, SYNC_INTERVAL);
 
 
     }
